@@ -23,7 +23,7 @@ export default function Main() {
                     {
                         todos.map((thisTodo) => (
                             <div key={thisTodo.id} className="col">
-                                <div className="card p-0 h-100">
+                                <div className="card p-0 h-100 shadow">
                                     <img src={thisTodo.image} className="card-img-top" alt="" />
                                     <div className="card-body">
                                         <h5 className="card-title">{thisTodo.name}</h5>

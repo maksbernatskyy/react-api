@@ -5,7 +5,7 @@
 /* Size of cards */
 
 .card img{
-  height: 200px;
+  height: 250px;
   object-fit: cover;
   width: 100%;
   aspect-ratio: 1 / 1;
