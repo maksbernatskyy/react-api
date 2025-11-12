@@ -14,9 +14,11 @@ export default function Card({image, name, birth_year, nationality, biography, a
                     <h6 className="fw-bold">Awards:</h6>
                     <ul className="list-unstyled mb-0">
                         {
-                            awards.map((thisAward, i) => (
+                            Array.isArray(awards) ? 
+                            (awards.map((thisAward, i) => (
                                 <li key={i}>{thisAward}</li>
                             ))
+                            ) : (<span>{awards}</span>)
                         }
                     </ul>
                 </div>

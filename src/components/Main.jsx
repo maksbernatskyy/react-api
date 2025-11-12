@@ -6,17 +6,33 @@ import Card from "./Card"
 
 export default function Main() {
 
-    {/* State for Axios */}
-    const [todos, setTodos] = useState([])
+    {/* State for Axios for actors */}
+    const [todosM, setTodosM] = useState([])
 
-    {/* Function call API */}
-    function fetchTodos() {
+    {/* State for Axios for actresses */}
+    const [todosF, setTodosF] = useState([])
+
+    {/* Function call API for actors */}
+    function fetchTodosM() {
         axios.get("https://lanciweb.github.io/demo/api/actors/")
-            .then((res) => setTodos(res.data))
+            .then((res) => setTodosM(res.data))
             .catch((err) => console.error(err))
     }
 
-    useEffect(fetchTodos, [] )
+    {/* Function call API for actresses */}
+    function fetchTodosF() {
+        axios.get("https://lanciweb.github.io/demo/api/actresses/")
+            .then((res) => setTodosF(res.data))
+            .catch((err) => console.error(err))
+    }
+
+    {/* useEffect for actors */}
+    useEffect(fetchTodosM, [] )
+
+    {/* useEffect for actresses */}
+    useEffect(fetchTodosF, [] )
+
+
 
     return (
         <>
@@ -29,7 +45,28 @@ export default function Main() {
                 {/* Grid Actors */}
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
                     {
-                        todos.map((thisTodo) => (
+                        todosM.map((thisTodo) => (
+                            <Card 
+                              key={thisTodo.id}
+                              image={thisTodo.image}
+                              name={thisTodo.name}
+                              birth_year={thisTodo.birth_year}
+                              nationality={thisTodo.nationality}
+                              biography={thisTodo.biography}
+                              awards={thisTodo.awards}
+                            />
+                        ))
+                    }
+                </div>
+
+                <div className="my-3">
+                    <h2 className="text-uppercase">actresses</h2>
+                </div>
+
+                {/* Grid Actresses */}
+                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                    {
+                        todosF.map((thisTodo) => (
                             <Card 
                               key={thisTodo.id}
                               image={thisTodo.image}
