@@ -53,14 +53,15 @@ export default function Main() {
                               birth_year={thisTodo.birth_year}
                               nationality={thisTodo.nationality}
                               biography={thisTodo.biography}
+                              movies={thisTodo.known_for}
                               awards={thisTodo.awards}
                             />
                         ))
                     }
                 </div>
 
-                <div className="my-3">
-                    <h2 className="text-uppercase">actresses</h2>
+                <div className="my-5">
+                    <h2 className="text-uppercase">actresses:</h2>
                 </div>
 
                 {/* Grid Actresses */}
@@ -74,6 +75,7 @@ export default function Main() {
                               birth_year={thisTodo.birth_year}
                               nationality={thisTodo.nationality}
                               biography={thisTodo.biography}
+                              movies={thisTodo.most_famous_movies}
                               awards={thisTodo.awards}
                             />
                         ))
