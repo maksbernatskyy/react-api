@@ -19,14 +19,19 @@ export default function Main() {
         <>
         <main>
             <div className="container">
-                <div className="card">
-                    <ul>
-                        {
-                            todos.map((thisTodo, i) => (
-                                <li key={i}>{thisTodo.name}</li>
-                            ))
-                        }
-                    </ul>
+                <div className="row row-cols-4">
+                    {
+                        todos.map((thisTodo) => (
+                            <div key={thisTodo.id} className="card">
+                                <img src={thisTodo.image} className="card-img-top" alt="" />
+                                <div className="card-body">
+                                    <h5 className="card-title">{thisTodo.name}</h5>
+                                    <p className="">{thisTodo.birth_year}</p>
+                                    <p className="">{thisTodo.nationality}</p>
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </main>
