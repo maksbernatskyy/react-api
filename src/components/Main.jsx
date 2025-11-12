@@ -3,7 +3,7 @@ import axios from "axios"
 
 export default function Main() {
 
-    {/* State of Axios */}
+    {/* State for Axios */}
     const [todos, setTodos] = useState([])
 
     return (
