@@ -19,15 +19,26 @@ export default function Main() {
         <>
         <main>
             <div className="container">
-                <div className="row row-cols-4">
+                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
                     {
                         todos.map((thisTodo) => (
-                            <div key={thisTodo.id} className="card">
-                                <img src={thisTodo.image} className="card-img-top" alt="" />
-                                <div className="card-body">
-                                    <h5 className="card-title">{thisTodo.name}</h5>
-                                    <p className="">{thisTodo.birth_year}</p>
-                                    <p className="">{thisTodo.nationality}</p>
+                            <div key={thisTodo.id} className="col">
+                                <div className="card p-0 h-100">
+                                    <img src={thisTodo.image} className="card-img-top" alt="" />
+                                    <div className="card-body">
+                                        <h5 className="card-title">{thisTodo.name}</h5>
+                                        <span className="d-block"><strong>Birth year:</strong> "{thisTodo.birth_year}";</span>
+                                        <span className="d-block"><strong>Nationality:</strong> "{thisTodo.nationality}";</span>
+                                        <p className="card-text"><strong>Biography:</strong> {thisTodo.biography}</p>
+                                        <h6 className="fw-bold">Awards:</h6>
+                                        <ul className="list-unstyled mb-0">
+                                            {
+                                                thisTodo.awards.map((thisAward, i) => (
+                                                    <li key={i}>{thisAward}</li>
+                                                ))
+                                            }
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         ))
